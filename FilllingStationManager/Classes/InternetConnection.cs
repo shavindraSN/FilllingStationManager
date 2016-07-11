@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Runtime;
 using System.Runtime.InteropServices;
 
-namespace FilllingStationManager.Classes
+namespace FillingStationManager.Classes
 {
     
     class InternetConnection

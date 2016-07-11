@@ -37,9 +37,10 @@ namespace FillingStationManager.Classes.UserAuthentication
              * 5. Return User object
              * 6. If SQL function returned null set return null object
              */
-            User user = new User();
+            
 
-            return user;
-        }
+            Classes.DBUtil dbu = new DBUtil();
+            dbu.connectToDB();
+            //dbu.readFromDB('exec login') --> pass the username and password
     }
 }
