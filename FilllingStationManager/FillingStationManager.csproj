@@ -53,6 +53,7 @@
     <Compile Include="Classes\InternetConnection.cs" />
     <Compile Include="Classes\NetworkConnectivity\NetworkStatus.cs" />
     <Compile Include="Classes\NetworkConnectivity\NetworkStatusChangedArgs.cs" />
+    <Compile Include="Classes\temp.cs" />
     <Compile Include="Classes\UserAuthentication\User.cs" />
     <Compile Include="Classes\Validator\StringValidator.cs" />
     <Compile Include="Classes\Validator\TextBoxValidator.cs" />
