@@ -1,4 +1,4 @@
-﻿namespace FilllingStationManager.Interfaces.TestInterfaces
+﻿namespace FillingStationManager.Interfaces.TestInterfaces
 {
     partial class EmailAndInternet
     {

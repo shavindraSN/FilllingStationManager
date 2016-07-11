@@ -1,4 +1,4 @@
-﻿namespace FilllingStationManager
+﻿namespace FillingStationManager
 {
     partial class Form1
     {

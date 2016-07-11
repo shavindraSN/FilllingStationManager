@@ -20,3 +20,4 @@ D:\FSMS\FilllingStationManager\FilllingStationManager\obj\Debug\FilllingStationM
 D:\FSMS\FilllingStationManager\FilllingStationManager\obj\Debug\FillingStationManager.Interfaces.TestInterfaces.GenericTest.resources
 D:\FSMS\FilllingStationManager\FilllingStationManager\obj\Debug\FilllingStationManager.Properties.Resources.resources
 D:\FSMS\FilllingStationManager\FilllingStationManager\obj\Debug\FillingStationManager.csproj.GenerateResource.Cache
+D:\FSMS\FilllingStationManager\FilllingStationManager\obj\Debug\FillingStationManager.csprojResolveAssemblyReference.cache

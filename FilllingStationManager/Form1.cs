@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using iTuner;
 using System.Data.SqlClient;
 
-namespace FilllingStationManager
+namespace FillingStationManager
 {
     public partial class Form1 : Form
     {

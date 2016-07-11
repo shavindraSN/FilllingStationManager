@@ -24,10 +24,10 @@ namespace FillingStationManager.Classes.UserAuthentication
         /// Type User, instance of object or null
         /// if users credentials are correct user object is returned else null is returned.
         /// </returns>
- 
+
         public User login(String username, String password)
         {
-            
+
             /**
              * Note: Clear these comments after implementing the method
              * 1. Check user name and password whether they are empty or not
@@ -37,10 +37,14 @@ namespace FillingStationManager.Classes.UserAuthentication
              * 5. Return User object
              * 6. If SQL function returned null set return null object
              */
-            
+
 
             Classes.DBUtil dbu = new DBUtil();
             dbu.connectToDB();
             //dbu.readFromDB('exec login') --> pass the username and password
+
+            User user = new User();
+            return user;
+        }
     }
 }
