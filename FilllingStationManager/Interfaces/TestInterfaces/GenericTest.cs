@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FilllingStationManager.Interfaces.TestInterfaces
+namespace FillingStationManager.Interfaces.TestInterfaces
 {
     public partial class GenericTest : Form
     {
