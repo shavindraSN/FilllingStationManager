@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B58AE87B-F323-4249-B8EF-5B994BC56509}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FilllingStationManager</RootNamespace>
+    <AssemblyName>FilllingStationManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\DBUtil.cs" />
+    <Compile Include="Classes\Email.cs" />
+    <Compile Include="Classes\InternetConnection.cs" />
+    <Compile Include="Classes\NetworkConnectivity\NetworkStatus.cs" />
+    <Compile Include="Classes\NetworkConnectivity\NetworkStatusChangedArgs.cs" />
+    <Compile Include="Classes\UserAuthentication\User.cs" />
+    <Compile Include="Classes\Validator\StringValidator.cs" />
+    <Compile Include="Classes\Validator\TextBoxValidator.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Comman\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Comman\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Comman\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Comman\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Comman\Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Comman\Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\CustomerManagement\CustomerManagementHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\CustomerManagement\CustomerManagementHome.Designer.cs">
+      <DependentUpon>CustomerManagementHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\EmployeeManagement\EmployeeManagementHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\EmployeeManagement\EmployeeManagementHome.Designer.cs">
+      <DependentUpon>EmployeeManagementHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ExpenseManagement\ExpenseManagementHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ExpenseManagement\ExpenseManagementHome.Designer.cs">
+      <DependentUpon>ExpenseManagementHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\FuelManagement\FuelManagementHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\FuelManagement\FuelManagementHome.Designer.cs">
+      <DependentUpon>FuelManagementHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\LPGasManagement\LPGasManagementHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\LPGasManagement\LPGasManagementHome.Designer.cs">
+      <DependentUpon>LPGasManagementHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\LubricantManagement\LubricantManagementHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\LubricantManagement\LubricantManagementHome.Designer.cs">
+      <DependentUpon>LubricantManagementHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\LubricantManagement\ManageLubricant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\LubricantManagement\ManageLubricant.Designer.cs">
+      <DependentUpon>ManageLubricant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\OrderManagement\OrderManagementHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\OrderManagement\OrderManagementHome.Designer.cs">
+      <DependentUpon>OrderManagementHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\StationaryManagement\StationaryManagementHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\StationaryManagement\StationaryManagementHome.Designer.cs">
+      <DependentUpon>StationaryManagementHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\TestInterfaces\EmailAndInternet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\TestInterfaces\EmailAndInternet.Designer.cs">
+      <DependentUpon>EmailAndInternet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\TestInterfaces\GenericTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\TestInterfaces\GenericTest.Designer.cs">
+      <DependentUpon>GenericTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Comman\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Comman\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Comman\Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\CustomerManagement\CustomerManagementHome.resx">
+      <DependentUpon>CustomerManagementHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\EmployeeManagement\EmployeeManagementHome.resx">
+      <DependentUpon>EmployeeManagementHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ExpenseManagement\ExpenseManagementHome.resx">
+      <DependentUpon>ExpenseManagementHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\FuelManagement\FuelManagementHome.resx">
+      <DependentUpon>FuelManagementHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\LPGasManagement\LPGasManagementHome.resx">
+      <DependentUpon>LPGasManagementHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\LubricantManagement\LubricantManagementHome.resx">
+      <DependentUpon>LubricantManagementHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\LubricantManagement\ManageLubricant.resx">
+      <DependentUpon>ManageLubricant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\OrderManagement\OrderManagementHome.resx">
+      <DependentUpon>OrderManagementHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\StationaryManagement\StationaryManagementHome.resx">
+      <DependentUpon>StationaryManagementHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\TestInterfaces\EmailAndInternet.resx">
+      <DependentUpon>EmailAndInternet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\TestInterfaces\GenericTest.resx">
+      <DependentUpon>GenericTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\Administrative\" />
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gas_station_94px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_database_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_list_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar_chart_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businessman_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buy_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_file_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cell_phone_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked_user_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud_storage_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coins_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\combo_chart_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conference_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contacts_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currency_exchange_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_backup_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\date_from_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\date_to_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_shield_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delivery_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deodorant_spray_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deodorant_spray_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doughnut_chart_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_from_cloud_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_property_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_user_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eraser_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expired_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_user_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fire_element_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\form_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gas_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gas_industry_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gas_pump_94px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gas_pump_94pxCust.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gas_pump_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gas_pump_Cust94px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gas_station_94px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gas_station_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gmail_login_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google_alerts_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google_drive_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\high_connection_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\historical_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\idea_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\in_transit_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\incendiary_grenade_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_94px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inspection_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invite_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leave_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\line_chart_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\more_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mouse_left_click_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_connection_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oil_industry_94pxsel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oil_industry_94pxsele.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oil_industry_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oil_industry_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oil_industry_filled_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\one_page_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\organization_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overtime_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positive_dynamic_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purchase_order_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report_card_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sales_performance_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send_file_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sheet_of_paper_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shipped_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort_left_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort_right_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system_information_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\touchscreen_smartphone_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usd_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vegetarian_food_94px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_file_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visible_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning_shield_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\waste_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wifi_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gas_pump_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\debt_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time_span_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\true_false_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ball_point_pen_filled_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\debt_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gas_pump_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ball_point_pen_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gas_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment_reminders_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contacts_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contacts_100px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\No Reports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forward_message_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_cash_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\water_32Npx.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
