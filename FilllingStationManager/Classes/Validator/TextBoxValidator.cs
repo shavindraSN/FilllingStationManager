@@ -42,18 +42,27 @@ namespace FillingStationManager.Classes.Validator
         /// <returns>Returns true or false.</returns>
         public Boolean isNumber(TextBox[] textBoxes)
         {
+            int tempi;
+            double tempd;
             foreach (TextBox textBox in textBoxes)
             {
-               
+                if(!int.TryParse(textBox.Text, out tempi) && double.TryParse(textBox.Text, out tempd))
+                {
+                    return false;
+                }
             }
-            return false;
+            return true;
         }
 
         public Boolean isInteger(TextBox[] textBoxes)
         {
+            int tempi;
             foreach (TextBox textBox in textBoxes)
             {
-
+                if(!int.TryParse(textBox.Text, out tempi))
+                {
+                    return false;
+                }
             }
 
             return false;

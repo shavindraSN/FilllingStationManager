@@ -10,18 +10,8 @@ using System.Threading.Tasks;
  */
 namespace FillingStationManager.Classes.Validator
 {
-    class StringValidator
+    class StringValidator:Validator
     {
-        public Boolean isNull(String value)
-        {
-            if (value == "" || value == null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        
     }
 }
