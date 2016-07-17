@@ -9,12 +9,10 @@ namespace FillingStationManager.Classes.Validator
 {
     /*
      * This class validate Textboxes
+     * Inherit basic validation methods
      */
-    class TextBoxValidator
+    class TextBoxValidator: Validator
     {
-
-        StringValidator sv = new StringValidator();
-
         /// <summary>
         /// Check all the given TextBoxes are empty. 
         /// If any TextBox in the given set is empty, method returns true. 
@@ -26,12 +24,12 @@ namespace FillingStationManager.Classes.Validator
         {
             foreach (TextBox textBox in textBoxes)
             {
-                if (sv.isNull(textBox.Text))
+                if (isEmpty(textBox.Text))
                 {
-                    return false;
+                    return true;
                 }
             }
-            return true;
+            return false;
         }
 
         /// <summary>
@@ -42,11 +40,9 @@ namespace FillingStationManager.Classes.Validator
         /// <returns>Returns true or false.</returns>
         public Boolean isNumber(TextBox[] textBoxes)
         {
-            int tempi;
-            double tempd;
             foreach (TextBox textBox in textBoxes)
             {
-                if(!int.TryParse(textBox.Text, out tempi) && double.TryParse(textBox.Text, out tempd))
+                if(!isNumber(textBoxes))
                 {
                     return false;
                 }
@@ -54,17 +50,20 @@ namespace FillingStationManager.Classes.Validator
             return true;
         }
 
-        public Boolean isInteger(TextBox[] textBoxes)
+        /// <summary>
+        /// Checks all the given TextBoxes are contains Integers
+        /// </summary>
+        /// <param name="textBoxes"></param>
+        /// <returns>Returns true or false</returns>
+        public Boolean isInt(TextBox[] textBoxes)
         {
-            int tempi;
             foreach (TextBox textBox in textBoxes)
             {
-                if(!int.TryParse(textBox.Text, out tempi))
+                if(!isInt(textBox.Text))
                 {
                     return false;
                 }
             }
-
             return false;
         }
     }
