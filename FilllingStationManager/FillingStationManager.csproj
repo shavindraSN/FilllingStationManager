@@ -53,8 +53,9 @@
     <Compile Include="Classes\InternetConnection.cs" />
     <Compile Include="Classes\NetworkConnectivity\NetworkStatus.cs" />
     <Compile Include="Classes\NetworkConnectivity\NetworkStatusChangedArgs.cs" />
+    <Compile Include="Classes\OrderManagement\Order.cs" />
+    <Compile Include="Classes\OrderManagement\OrderHandler.cs" />
     <Compile Include="Classes\UserAuthentication\User.cs" />
-    <Compile Include="Classes\Validator\StringValidator.cs" />
     <Compile Include="Classes\Validator\TextBoxValidator.cs" />
     <Compile Include="Classes\Validator\Validator.cs" />
     <Compile Include="Form1.cs">
@@ -218,6 +219,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Classes\FuelManagement\" />
     <Folder Include="Interfaces\Administrative\" />
     <Folder Include="Reports\" />
   </ItemGroup>

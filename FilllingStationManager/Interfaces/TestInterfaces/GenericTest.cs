@@ -21,7 +21,18 @@ namespace FillingStationManager.Interfaces.TestInterfaces
         {
             TextBox[] textBoxes = { textBox1, textBox2, textBox3 };
             Classes.Validator.TextBoxValidator tbv = new Classes.Validator.TextBoxValidator();
-            label1.Text = tbv.isEmpty(textBoxes).ToString();
+            string output;
+
+            if (!tbv.isEmpty(textBoxes))
+            {
+                output = "OK";
+            }
+            else
+            {
+                output = "Not OK";
+            }
+
+            label1.Text = output;
         }
     }
 }
