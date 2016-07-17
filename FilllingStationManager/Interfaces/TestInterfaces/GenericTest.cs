@@ -19,20 +19,15 @@ namespace FillingStationManager.Interfaces.TestInterfaces
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TextBox[] textBoxes = { textBox1, textBox2, textBox3 };
-            Classes.Validator.TextBoxValidator tbv = new Classes.Validator.TextBoxValidator();
-            string output;
-
-            if (!tbv.isEmpty(textBoxes))
+            Classes.Validator.Validator val = new Classes.Validator.Validator();
+            if(val.isEmail(textBox1.Text))
             {
-                output = "OK";
-            }
+                label1.Text = "Is an email";
+            } 
             else
             {
-                output = "Not OK";
+                label1.Text = "Not an Email";
             }
-
-            label1.Text = output;
         }
     }
 }
