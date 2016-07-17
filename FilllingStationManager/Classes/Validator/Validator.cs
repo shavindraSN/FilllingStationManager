@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace FillingStationManager.Classes.Validator
@@ -63,10 +64,24 @@ namespace FillingStationManager.Classes.Validator
             }
         }
 
-        public Boolean isEmail(String value)
+        /// <summary>
+        /// Check whether given string is a valid email address.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns>Return true or false</returns>
+        public Boolean isEmail(String email)
         {
-            // Add the code to implement emails validation
-            return false;
+            string regEx = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+";
+            regEx += @"/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
+            bool isEmail = Regex.IsMatch(email, regEx, RegexOptions.IgnoreCase);
+            if (isEmail)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
